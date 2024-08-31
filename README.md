@@ -13,6 +13,7 @@ Demo Projects from Module 6 - Artifact Repository Manager with Nexus
   - Create nexus user (see next section)
   - ``su - nexus`` -> switch to nexus user
   - ``/opt/nexus-3.71.0-96/bin/nexus start``
+- Open port 8081 to access Nexus from browser on firewall rules: inbound connections, custom, TCP, 8081, All IPv4 + All IPv6
 
 ## Create new User on Nexus with relevant permissions
 - On the cloud server run ``adduser nexus``
@@ -26,5 +27,6 @@ Demo Projects from Module 6 - Artifact Repository Manager with Nexus
   - ``vim nexus-3.71.0-96/bin/nexus.rc`` -> edit and write: run_as_user="nexus"
 
 ## Java Gradle Project: Build Jar & Upload to Nexus
+- 
 
 ## Java Maven Project: Build Jar & Upload to Nexus
