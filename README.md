@@ -52,4 +52,12 @@ Demo Projects from Module 6 - Artifact Repository Manager with Nexus
 
 ## Java Maven Project: Build Jar & Upload to Nexus
 - Refer to "java-maven-app" repo to see the project
-- 
+- pom.xml configuration:
+  - plugin to upload jar files: ``maven-deploy-plugin``
+  - snapshot url: ``distributionManagement``
+  - nexus credentials: create a 'settngs.xml' file under C:/.m2 hidden folder -> this file will contain global variable for all maven projects
+- Build jar file:
+  - ``cd java-maven-app``
+  - ``mvn package`` -> it creates a 'target' folder and the jar file
+- ``mvn deploy`` to update the app onto maven repository
+- Browse > Components > Maven snapshots -> to see the app on Nexus
