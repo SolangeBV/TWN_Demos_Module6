@@ -27,15 +27,29 @@ Demo Projects from Module 6 - Artifact Repository Manager with Nexus
 - Configure repositories in Nexus:
   - Settings > Repository > Repositories (remember that Nexus is a repository manager)
   - Create Repository > pick a repository format > finish up configuration for that repo
-- Configure Blob Stores in Nexus:
-  - ...
-- Configure Cleanup Policies in Nexus:
-  - ...
 
 ## Create new User on Nexus with relevant permissions
-- 
+- Settings > Security > Users > Create User
+  - Status: active
+  - Roles: nx-anonymous
+- Create role:
+  - Settings > Security > Roles > Create Role
+    - Type: Nexus role
+    - Privileges: nx-reposiroty-view-maven2-snapshots.*
+  - Assign this custom role to the newly created user
 
 ## Java Gradle Project: Build Jar & Upload to Nexus
-- 
+- Refer to "java-app" repo to see the project
+- Install plugin: add 'maven-publish' to build.gradle file (to be able to publish a jar to a maven repository)
+- 'publications' within build.gradle -> define jar artifact
+- 'repositories' within build.gradle -> define where to upload the artifact to (nexus link + credentials of the nexus user)
+- settings.gradle -> contains data to create the jar file
+- ``gradle build`` -> to create the build folder and the jar file
+- Upload to Nexus:
+  - ``cd java-app``
+  - ``gradle publish`` -> uses the plugin in build.gradle file
+  - Browse > Components > Maven snapshots -> to see the app on Nexus
 
 ## Java Maven Project: Build Jar & Upload to Nexus
+- Refer to "java-maven-app" repo to see the project
+- 
